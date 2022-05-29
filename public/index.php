@@ -1,9 +1,9 @@
 <?php
 
-require_once 'Task.php';
-require_once 'User.php';
-require_once 'Comment.php';
-require_once 'TaskService.php';
+require_once '../model/Task.php';
+require_once '../model/User.php';
+require_once '../model/Comment.php';
+require_once '../model/TaskService.php';
 
 // 1. Разработайте класс Task, выполняющий ответственность обычной задачи Todo-списка.
 // Класс должен содержать приватные свойства description, dateCreated, dateUpdated, dateDone,
