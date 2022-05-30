@@ -1,25 +1,14 @@
 <?php
 
-require_once 'User.php';
+class Task
+{
+    private string $description;
+    private bool $isDone;
 
-class Task {
-    private User $user;
-    private ?string $description;
-    private ?int $priority;
-    private ?DateTime $dateCreated;
-    private ?DateTime $dateUpdated;
-    private ?DateTime $dateDone;
-    private bool $isDone = false;
-    private Comment $comment;
-
-    public function __construct(User $user)
+    public function __constract(string $description, bool $isDone = false)
     {
-        $this->user = $user;
-    }
-
-    public function getUser()
-    {
-        return $this->user;
+        $this->description = $description;
+        $this->sDone = $isDone;
     }
 
     public function getDescription()
@@ -27,31 +16,20 @@ class Task {
         return $this->description;
     }
 
-    public function setDescription($description) // При вызове метода setDescription обновляйте dateUpdated.
+    public function setDescription($description)
     {
         $this->description = $description;
-        $this->dateUpdated = new DateTime();
-    }
- 
-    public function getPriority()
-    {
-        return $this->priority;
+
     }
 
-    public function setPriority($priority)
+    public function getIsDone()
     {
-        $this->priority = $priority;
+        return $this->isDone;
     }
 
-    public function setComment($comment)
+    public function setIsDone($isDone)
     {
-        $this->comment = $comment;
-    }
+        $this->isDone = $isDone;
 
-    public function markAsDone() // помечающий задачу выполненной, обновляющий свойства dateUpdated и dateDone
-    {
-        $this->isDone = true;
-        $this->dateUpdated = new DateTime();
-        $this->dateDone = new DateTime();
     }
 }
